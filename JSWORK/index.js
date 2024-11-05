@@ -67,10 +67,10 @@
 // }
 // btn.addEventListener("click",getData);
 
-const promise=new promise((resolve,reject)=>{
+const promise=new Promise((resolve,reject)=>{
     let a=12;
-    if(Ia>10){
-        resolve("Resolved");
+    if(a>10){
+        resolve({name:"Rahul",branch:"aiml"});
     }
     else{
         reject("rejected");
