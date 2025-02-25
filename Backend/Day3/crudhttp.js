@@ -43,4 +43,4 @@ server.listen(port,(err)=>{
         
     }
 })
-//server is stateless
+//server is stateless   means it treat each process independtly 
