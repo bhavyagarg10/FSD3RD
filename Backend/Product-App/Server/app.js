@@ -49,7 +49,37 @@ else{
 }
 })
 
+app.patch("/editproducts/:id",(req,res)=>{
+    const pid=req.params.id;
+    const {title, price,quantity}=req.body;
+    if(!title||!price||!quantity){
+        res.status(400).json({status:"fail",message:"all feilds required except id"});
+    }
+    else{
+        const index=products.findIndex(ind=>ind.id==pid);
+        if(index!=-1){
+            products[index].title=title;
+            products[index].price=price;
+            products[index].quantity=quantity;
+            res.status(200).json({status:"success",message:"data edited successfully",data:products[index]})
+        }
+        else{
+            res.status(400).json({status:"fail",message:"item not found"});
+        }
+    }
+})
 
+app.delete("/deleteproducts/:id",(req,res)=>{
+    const pid=req.params.id;
+    const index=products.findIndex(ind=>ind.id==pid);
+    if(index==-1){
+        res.status(400).json({status:"fail",message:"item not found"})
+    }
+    else{
+        products.splice(index,1);
+        res.status(200).json({status:"success", message:"item deleted successfully"});
+    }
+})
 
 app.listen(port,(err)=>{
     try{
