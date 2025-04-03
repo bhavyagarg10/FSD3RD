@@ -1,3 +1,5 @@
+//mongo client driver
+
 const {MongoClient}=require("mongodb");
 const Mongo_URL="mongodb+srv://bhavyagarg310:root@cluster0.biyiytx.mongodb.net/FSD-CSE-AIML?retryWrites=true&w=majority&appName=Cluster0"
 const db_name="FSD-CSE-AIML";
@@ -32,6 +34,7 @@ db_connect();
 // })
 
 
+//iefee but correct this
 // (async()=>{
 //     try{
 //         await MongoClient.connect(Mongo_URL);
