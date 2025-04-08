@@ -1,5 +1,8 @@
 const { log } = require("console");
 const fs=require("fs/promises")
+
+//readFile() or writefile function doesnt throw any error so, we throw error if occur
+
 function myReadFile(){
     try{
         const res=fs.readFile("dummy.text","utf-8");
